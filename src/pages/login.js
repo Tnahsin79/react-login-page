@@ -35,15 +35,16 @@ const Login = () => {
             setEmail(null);
             setPwd(null);
             //await fetch("https://react-login-server.herokuapp.com/login", {
-                await fetch("http://localhost:3001/login", {
+                await fetch("http://localhost:3001/login/"+data.Email+"/"+data.Password)
+                /*, {
                 method: "GET",
                 body: JSON.stringify(data),
                 headers: {
                     "Content-Type": "application/json"
                 }
-            })
+            })*/
                 .then((res) => res.json())
-                .then((user) => setDat(user))
+                .then((data) => setDat(data))
                 .catch(console.error);
             setAccess(dat.status);
             console.log(dat);

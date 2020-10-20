@@ -20,14 +20,16 @@ const Signup = () => {
                 Name: name,
                 Email: email,
                 Password: pwd,
-                isActivated: false
+                isActivated: false,
+                Friends: [],
+                Posts: []
             }
             console.log(data);
             setName("");
             setEmail("");
-            setPwd(""); 
+            setPwd("");
             //let temp = await fetch("https://react-login-server.herokuapp.com/signup", {
-                let temp = await fetch("http://localhost:3001/signup",{
+            let temp = await fetch("http://localhost:3001/signup", {
                 method: "POST",
                 body: JSON.stringify(data),
                 headers: {
@@ -35,7 +37,7 @@ const Signup = () => {
                 }
             });
             if (temp)
-            alert("Student added");
+                alert("Student added");
         }
         catch (error) {
             console.log(error);

@@ -5,6 +5,9 @@ const routes = {
     valid: "/valid/:id",
     login: "/login",
     profile: "/dashboard/:id/profile",
-    wall: "/dashboard/:id/wall"
+    wall: "/dashboard/:id/wall",
+    posts: "/dashboard/:id/posts",
+    friends: "/dashboard/:id/friends",
+    dashHome: "/dashboard/:id"
 };
 export default routes;

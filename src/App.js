@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import Signup from "./pages/signup";
 import Login from "./pages/login";
 import Valid from "./pages/valid";
+import Dashboard from "./pages/dashboard"
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
           <Valid />
         </Route>
         <Route path={routes.dashboard}>
-          <h1>DASHBOARD</h1>
+          <Dashboard />
         </Route>
         <Route path={routes.home}>
           <header className="App-header">

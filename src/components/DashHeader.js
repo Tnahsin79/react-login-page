@@ -22,7 +22,7 @@ const DashHeader = (props) => {
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="mr-auto" navbar>
                         <NavItem>
-                            <Link className="nav-link" to={routes.wall.replace(":id",id)}>Posts</Link>
+                            <Link className="nav-link" to={routes.wall.replace(":id",id)}>Wall</Link>
                         </NavItem>
                         <NavItem>
                             <Link className="nav-link" to={routes.profile.replace(":id",id)}>Profile</Link>

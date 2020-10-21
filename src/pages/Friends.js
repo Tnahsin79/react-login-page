@@ -6,6 +6,7 @@ const Friends = (props) => {
     const [friends, setFriends] = useState([]);
     const id = props.id;
     const email = props.email;
+    const name = props.name;
 
     useEffect(() => {
         fetch("http://localhost:3001/friends/" + id)
@@ -22,7 +23,7 @@ const Friends = (props) => {
 
     console.log(friends);
     {
-        var result=users.filter((user) => {
+        var result = users.filter((user) => {
             if (user.Email !== email) {
                 if (!friends.includes({
                     email: user.Email,
@@ -52,7 +53,7 @@ const Friends = (props) => {
     return (
         <div>
             <h1>User ID: {id}</h1>
-            <h1>User Name: profileData.name</h1>
+            <h1>User Name: {name}</h1>
             <h1>User Email: {email}</h1>
             {
                 result.map((user) =>

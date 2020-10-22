@@ -22,7 +22,9 @@ const Wall = (props) => {
             <h1>User Name: {name}</h1>
             <h1>User Email: {email}</h1>
             {
-                postsData.map((data) => <Post id={id} post_id={data.post_id} name={data.name} text={data.text} likes={data.likes} />)
+                postsData.length &&
+                    postsData.map((data) => <Post id={id} post_id={data.post_id} name={data.name} text={data.text} likes={data.likes} />) 
+                    //:<h3>No new posts</h3>
             }
         </div>
     )

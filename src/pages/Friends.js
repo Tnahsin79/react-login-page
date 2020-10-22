@@ -36,7 +36,7 @@ const Friends = (props) => {
     }
 
     const addFriend = (e) => {
-        let mail = e.target.id;
+        //let mail = e.target.id;
         var data = {
             Email: e.target.id,
             Name: e.target.name

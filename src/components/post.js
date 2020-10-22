@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button } from "reactstrap";
+//import { Button } from "reactstrap";
 
 const Post = (props) => {
     const userId = props.id;
@@ -7,22 +7,24 @@ const Post = (props) => {
     const id = postId.split("-")[0];
     const index = parseInt(postId.split("-")[1]);
     const name = props.name;
-    const [likes,setLikes] = useState(props.likes);
+    const [likes, setLikes] = useState(props.likes);
     const text = props.text;
     const [liked, setLiked] = useState(null);
     const [numberOfLikes, setNumberOfLikes] = useState(likes.length);
 
     useEffect(() => {
         setLikes(props.likes);
+        setNumberOfLikes(props.likes.length)
         if (likes.includes(userId))
             setLiked(true);
         else
             setLiked(false);
-        setNumberOfLikes(likes.length)
-    });
+        //setNumberOfLikes(likes.length)
+    }, []);
 
     const like = () => {
         try {
+            setNumberOfLikes(numberOfLikes + 1);
             setLiked(true);
             var data = {
                 likerId: userId,
@@ -44,6 +46,7 @@ const Post = (props) => {
 
     const dislike = () => {
         try {
+            setNumberOfLikes(numberOfLikes - 1);
             setLiked(false);
             var data = {
                 likerId: userId,

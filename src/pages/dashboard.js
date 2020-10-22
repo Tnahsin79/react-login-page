@@ -25,19 +25,19 @@ const Dashboard = () => {
             <DashHeader id={id} />
             <Switch>
                 <Route path={routes.wall.replace(":id", id)}>
-                    <Wall id={profileData._id} name={profileData.Name} email={profileData.Email}/>
+                    <Wall id={profileData._id} name={profileData.Name} email={profileData.Email} />
                 </Route>
                 <Route path={routes.profile.replace(":id", id)}>
                     <Profile id={profileData._id} name={profileData.Name} email={profileData.Email} />
                 </Route>
                 <Route path={routes.posts.replace(":id", id)}>
-                    <AddPosts id={id} name={profileData.Name}/>
+                    <AddPosts id={id} name={profileData.Name} />
                 </Route>
                 <Route path={routes.friends.replace(":id", id)}>
-                    <Friends id={id} email={profileData.Email} name={profileData.Name}/>
+                    <Friends id={id} email={profileData.Email} name={profileData.Name} />
                 </Route>
                 <Route path={routes.dashHome.replace(":id", id)}>
-                    <Wall id={profileData._id} name={profileData.Name} email={profileData.Email}/>
+                    <Profile id={profileData._id} name={profileData.Name} email={profileData.Email} />
                 </Route>
             </Switch>
         </div>

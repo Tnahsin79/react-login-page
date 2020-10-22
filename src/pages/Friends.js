@@ -52,9 +52,9 @@ const Friends = (props) => {
 
     return (
         <div>
-            <h1>User ID: {id}</h1>
-            <h1>User Name: {name}</h1>
-            <h1>User Email: {email}</h1>
+            <h4>User Name: {name}</h4>
+            <h4>User Email: {email}</h4>
+            <h1>ADD FRIENDS</h1>
             {
                 result.map((user) =>
 

@@ -14,24 +14,31 @@ const DashHeader = (props) => {
     const id = props.id;
     const toggle = () => setIsOpen(!isOpen);
 
+    const logout = () => {
+        localStorage.removeItem('capstone');
+    }
+
     return (
         <div>
             <Navbar color="light" light expand="md">
-                
+
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="mr-auto" navbar>
                         <NavItem>
-                            <Link className="nav-link" to={routes.wall.replace(":id",id)}>Wall</Link>
+                            <Link className="nav-link" to={routes.wall.replace(":id", id)}>Wall</Link>
                         </NavItem>
                         <NavItem>
-                            <Link className="nav-link" to={routes.profile.replace(":id",id)}>Profile</Link>
+                            <Link className="nav-link" to={routes.profile.replace(":id", id)}>Profile</Link>
                         </NavItem>
                         <NavItem>
-                            <Link className="nav-link" to={routes.posts.replace(":id",id)}>Add Posts</Link>
+                            <Link className="nav-link" to={routes.posts.replace(":id", id)}>Add Posts</Link>
                         </NavItem>
                         <NavItem>
-                            <Link className="nav-link" to={routes.friends.replace(":id",id)}>Add friends</Link>
+                            <Link className="nav-link" to={routes.friends.replace(":id", id)}>Add friends</Link>
+                        </NavItem>
+                        <NavItem>
+                            <Link className="nav-link btn btn-outline-danger" to={routes.login} onClick={logout}>LOGOUT</Link>
                         </NavItem>
                     </Nav>
                 </Collapse>

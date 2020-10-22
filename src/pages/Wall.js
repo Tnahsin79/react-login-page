@@ -18,9 +18,10 @@ const Wall = (props) => {
 
     return (
         <div>
-            <h1>User ID: {id}</h1>
             <h1>User Name: {name}</h1>
             <h1>User Email: {email}</h1>
+            
+            <h1>---MY WALL---</h1>
             {
                 postsData.length &&
                     postsData.map((data) => <Post id={id} post_id={data.post_id} name={data.name} text={data.text} likes={data.likes} />) 

@@ -14,16 +14,20 @@ const Login = () => {
     //const { id } = useParams();
 
     useEffect(() => {
+        if (localStorage.getItem('capstone'))
+            history.push(routes.dashboard.replace(":id", localStorage.getItem('capstone')));
         fetch("http://localhost:3001/login/" + email + "/" + pwd)
             .then((res) => res.json())
             .then((data) => setDat(data))
             .catch(console.error);
-        if (dat.status)
+        if (dat.status) {
+            localStorage.setItem('capstone', dat.id);
             history.push(routes.dashboard.replace(":id", dat.id));
+        }
         //else
         //    setAccess(dat.status);
         console.log(dat);
-    }, [email,pwd])
+    }, [email, pwd])
 
     const changeEmail = (e) => {
         setEmail(e.target.value);
